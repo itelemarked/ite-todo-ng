@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+
+import { TodoList } from "./todo/todo-list";
 
 @Component({
   selector: 'app-root',
-  imports: [IonicModule],
+  imports: [IonicModule, TodoList],
   template: `
     <ion-app>
       
@@ -15,8 +16,9 @@ import { IonicModule } from '@ionic/angular';
       </ion-header>
 
       <ion-content [forceOverscroll]="false" class="ion-padding">
-        <h1>App works!</h1>
-        <ion-button>btn</ion-button>
+
+        <app-todo-list/>
+
       </ion-content>
 
     </ion-app>
@@ -24,5 +26,5 @@ import { IonicModule } from '@ionic/angular';
   styles: [``]
 })
 export class App {
-  
+
 }
